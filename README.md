@@ -1,16 +1,92 @@
-# React + Vite
+# ⚡ Advanced React Developer Assignment
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 🧠 Overview
 
-Currently, two official plugins are available:
+Build a **Project Management Dashboard** using **React.js**.  
+This dashboard allows **authenticated users** to manage multiple **projects and tasks**, featuring CRUD operations, filtering, pagination, and state persistence.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+The goal of this assignment is to assess your ability to structure a scalable React app, handle complex state logic, interact with APIs, and deliver a clean, modern UI.
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🎯 Core Objectives
 
-## Expanding the ESLint configuration
+### 1. **Authentication**
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Implement **Login** and **Register** pages.
+- Use **JWT-based authentication** (mocked or via a simple Node/JSON Server API).
+- After login:
+  - Store the token in **localStorage** or **HTTP-only cookie**.
+  - Redirect the user to the dashboard.
+- Protect routes — unauthenticated users cannot access the dashboard.
+
+---
+
+### 2. **Dashboard Features**
+
+#### 🗂️ Projects
+
+- View all projects (paginated list).
+- Add, edit, and delete projects.
+- Each project contains:
+  - `name`
+  - `description`
+  - `status` (`Active`, `On Hold`, `Completed`)
+  - `created_at` (auto-generated)
+
+#### ✅ Tasks (per project)
+
+- Each project has multiple tasks.
+- Task fields:
+  - `title`
+  - `assigned_to`
+  - `due_date`
+  - `priority` (`Low`, `Medium`, `High`)
+  - `status` (`Pending`, `In Progress`, `Done`)
+- Allow:
+  - Creating, editing, deleting tasks.
+  - Filtering by status or priority.
+  - Sorting by due date.
+
+---
+
+### 3. **Search, Filter & Pagination**
+
+- Search projects or tasks by name/title.
+- Filter tasks by `status` or `priority`.
+- Paginate both project and task lists (client-side or API-based).
+
+---
+
+### 4. **State Management**
+
+- Use one of the following (your choice):
+  - **Redux Toolkit**
+  - **React Context + useReducer**
+- Persist authentication and project/task state.
+
+---
+
+### 5. **API Handling**
+
+- Use **Axios** for API requests.
+- Mock backend using:
+  - **JSON Server** with routes:
+    - `/auth/login`
+    - `/auth/register`
+    - `/projects`
+    - `/tasks`
+- Or connect to any backend you prefer (if you already have one).
+
+---
+
+## 💎 Bonus (Optional but Impressive)
+
+✅ Drag-and-drop tasks between statuses (`react-beautiful-dnd` or `@dnd-kit/core`).  
+✅ Implement **dark/light mode** with a toggle.  
+✅ Add **toast notifications** (e.g., success/error messages using `react-hot-toast` or `react-toastify`).  
+✅ Add **lazy loading** for routes using React Router.  
+✅ Use **React Query** for API caching and automatic refetching.  
+✅ Add a **chart** (using `recharts` or `chart.js`) showing task completion per project.
+
+---
